@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <title>Sabbra Caddabra</title>
 </head>
 <body>
@@ -11,7 +12,11 @@
     <p>{{ order.customer_name }}, 
         {{ order.order_date }},
         {{ order.item_purchased }},
-        {{ order.quantity }}</p>
+        {{ order.quantity }}
+        <a href="orders/{{ order_list.index(order) }}">Go To Order</a>
+    </p>
     {% endfor %}
+
+    
 </body>
 </html>
